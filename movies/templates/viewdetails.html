@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<h1>Movie Details</h1>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class=" col-md-6 " >
+            <img src="{{m.img.url}}" class="img-top" alt="..." height="400px" width="500px">
+        </div>
+        <div class=" col-md-6 ">
+            <h5 class="card-title" style="text-transform:uppercase;"><b>{{m.name}}</b></h5><br>
+
+                    <p class="card-text"><b>year:{{m.year}}</b></p>
+                    <p class="card-text"><b>DESCRIPTION:</b><i>{{m.desc}}</i></p>
+                <a href="{% url 'app1:editmovie' m.id %}" class="btn btn-warning">EDIT</a>
+                <a href="{% url 'app1:deletemovie' m.id %}" class="btn btn-danger">DELETE</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
